@@ -1,10 +1,12 @@
+import Products from './components/Products';
+
 import './App.css'
 
 function App() {
-
-  return (
+   return (
     <>
-      <h1>Hello World!</h1>
+      <h1>Product List</h1>
+      <Products />
     </>
   )
 }
