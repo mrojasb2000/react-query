@@ -1,4 +1,4 @@
-const products = Array.from({ length: 100 }, (_, i) => ({
+const products = Array.from({ length: 10 }, (_, i) => ({
   id: i + 1,
   name: `Product ${i + 1}`,
   description: `Description for product ${i + 1}`,

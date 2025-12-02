@@ -17,10 +17,15 @@ function Products() {
     <>
       {products.map(product => (
         <div key={product.id}>
-          {product.name}
+          <h3>{product.name}</h3>
           <p>{product.description}</p>
-          <p>{product.price}</p>
-          <p>{product.stock}</p>
+          <p>USD {product.price}</p>
+          <div>
+            <label htmlFor={product.id}>In Stock:</label>
+            <input type="checkbox" id={product.id} checked={product.inStock} />
+            <button id={product.id} onClick={() => console.log('Delete product')}>Delete</button>
+          </div>
+          <hr />
         </div>
       ))}
     </>
