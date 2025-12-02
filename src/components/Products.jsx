@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import { getProducts } from '../api/productAPI'
 
 function Products() {
-  const { isLoading, data, isError, error } = useQuery({
+  const { isLoading, data: products, isError, error } = useQuery({
     queryKey: ['products'],
     queryFn: getProducts
   });
@@ -15,7 +15,14 @@ function Products() {
 
   return (
     <>
-      {JSON.stringify(data)}
+      {products.map(product => (
+        <div key={product.id}>
+          {product.name}
+          <p>{product.description}</p>
+          <p>{product.price}</p>
+          <p>{product.stock}</p>
+        </div>
+      ))}
     </>
   )
 }
